@@ -16,14 +16,14 @@ test('User submits form with all fields filled', async ({ page }) => {
   await textBox.expectOutput(user);
 });
 
-test('⚠️ User submits form with only name and email', async ({ page }) => {
+test('User submits form with only name and email', async ({ page }) => {
   const textBox = new TextBoxPage(page);
   await textBox.goto();
   await textBox.submitForm({ fullName: user.fullName, email: user.email });
   await textBox.expectOutput({ fullName: user.fullName, email: user.email });
 });
 
-test('⚠️ User submits form with only address fields', async ({ page }) => {
+test('User submits form with only address fields', async ({ page }) => {
   const textBox = new TextBoxPage(page);
   await textBox.goto();
   await textBox.submitForm({ currentAddress: user.currentAddress, permanentAddress: user.permanentAddress });

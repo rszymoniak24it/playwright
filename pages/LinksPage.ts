@@ -1,5 +1,5 @@
 // pages/LinksPage.ts
-import { Page, Locator, expect, APIResponse } from '@playwright/test';
+import { Page, Locator, expect } from '@playwright/test';
 
 export class LinksPage {
   readonly page: Page;

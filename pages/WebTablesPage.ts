@@ -67,6 +67,7 @@ export class WebTablesPage {
     await this.submitButton.click();
     
     const invalidFields = await this.modal.locator(':invalid').count();
+
     await expect(invalidFields).toBeGreaterThan(0);
     await expect(this.modal).toBeVisible();
   }
@@ -88,3 +89,12 @@ export class WebTablesPage {
     await row.locator('[title="Delete"]').click();
   }
 }
+
+
+
+/*
+const element: Locator = await page.getByTestId('accept-button);
+const backgroundColor = await element.evaluate((el) => {
+  return window.getComputedStyle(el).getPropertyValue('background-color');
+});
+*/

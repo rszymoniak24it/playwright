@@ -15,6 +15,8 @@ test.describe('WebTables tests', () => {
     const webTables = new WebTablesPage(page);
     await webTables.goto();
     await webTables.addRecord(testUser);
+    await page.pause();
+
 
     const newRow = await webTables.searchByEmail(testUser.email);
     await expect(newRow).toContainText(testUser.department);
@@ -35,7 +37,7 @@ test.describe('WebTables tests', () => {
     await expect(row).toContainText(testUser.firstName);
   });
 
-  test('✏️ Edit record department', async ({ page }) => {
+  test('Edit record department', async ({ page }) => {
     const webTables = new WebTablesPage(page);
     await webTables.goto();
     await webTables.addRecord(testUser);
