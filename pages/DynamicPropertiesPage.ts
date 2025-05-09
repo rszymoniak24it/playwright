@@ -24,7 +24,9 @@ export class DynamicPropertiesPage {
   }
 
   async waitForVisibleButton() {
+    await this.visibleAfter5SecBtn.waitFor();
     await expect(this.visibleAfter5SecBtn).toBeVisible();
+
   }
 
   async waitForEnabledButton() {
